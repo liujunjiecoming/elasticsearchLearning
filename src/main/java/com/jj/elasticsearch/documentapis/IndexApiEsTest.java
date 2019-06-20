@@ -48,9 +48,14 @@ public class IndexApiEsTest {
     }
 
 
+    /**
+     * 6.8和7.1版本问题，7.1开始不用设置type,会有默认的type
+     * @throws IOException
+     */
     @Test
     public void CreateOne() throws IOException {
         IndexRequest request = new IndexRequest("posts");
+        request.type("doc");
         request.id("1");
         String jsonString = "{" +
                 "\"user\":\"kimchy\"," +
@@ -66,9 +71,13 @@ public class IndexApiEsTest {
         Map<String, Object> jsonMap = new HashMap<>();
         jsonMap.put("user", "kimchy");
         jsonMap.put("postDate", new Date());
-        jsonMap.put("message", "trying out Elasticsearch");
+        jsonMap.put("message", "trying out Elasticsearch twice");
         IndexRequest indexRequest = new IndexRequest("posts")
-                .id("1").source(jsonMap);
+                .type("doc")
+                .id("2")
+                .source(jsonMap);
+
+        client.index(indexRequest, RequestOptions.DEFAULT);
 
     }
 
@@ -77,13 +86,17 @@ public class IndexApiEsTest {
         XContentBuilder builder = XContentFactory.jsonBuilder();
         builder.startObject();
         {
-            builder.field("user", "kimchy");
+            builder.field("user", "kim");
             builder.timeField("postDate", new Date());
             builder.field("message", "trying out Elasticsearch");
         }
         builder.endObject();
         IndexRequest indexRequest = new IndexRequest("posts")
-                .id("1").source(builder);
+                .type("doc")
+                .id("3")
+                .source(builder);
+
+        client.index(indexRequest, RequestOptions.DEFAULT);
     }
 
     @Test
