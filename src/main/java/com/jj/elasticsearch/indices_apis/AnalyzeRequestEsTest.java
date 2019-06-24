@@ -10,9 +10,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
-import java.net.UnknownHostException;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @ClassName AnalyzeRequestEs
@@ -43,6 +40,7 @@ public class AnalyzeRequestEsTest {
 
     /**
      * 简单的AnalyzeRequest测试
+     *
      * @throws IOException
      */
     @Test
@@ -75,37 +73,6 @@ public class AnalyzeRequestEsTest {
         System.out.println(response);
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

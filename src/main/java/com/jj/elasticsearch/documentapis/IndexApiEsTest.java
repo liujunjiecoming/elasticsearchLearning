@@ -50,6 +50,7 @@ public class IndexApiEsTest {
 
     /**
      * 6.8和7.1版本问题，7.1开始不用设置type,会有默认的type
+     *
      * @throws IOException
      */
     @Test
@@ -86,14 +87,14 @@ public class IndexApiEsTest {
         XContentBuilder builder = XContentFactory.jsonBuilder();
         builder.startObject();
         {
-            builder.field("user", "kim");
+            builder.field("user", "luca");
             builder.timeField("postDate", new Date());
-            builder.field("message", "trying out Elasticsearch");
+            builder.field("message", "HelloWorld");
         }
         builder.endObject();
         IndexRequest indexRequest = new IndexRequest("posts")
                 .type("doc")
-                .id("3")
+                .id("5")
                 .source(builder);
 
         client.index(indexRequest, RequestOptions.DEFAULT);
@@ -112,6 +113,7 @@ public class IndexApiEsTest {
 
     /**
      * If there is a version conflict, an ElasticsearchException will be thrown:
+     *
      * @throws IOException
      */
     @Test
@@ -123,14 +125,12 @@ public class IndexApiEsTest {
                 .setIfPrimaryTerm(20);
         try {
             IndexResponse response = client.index(request, RequestOptions.DEFAULT);
-        } catch(ElasticsearchException e) {
+        } catch (ElasticsearchException e) {
             if (e.status() == RestStatus.CONFLICT) {
 
             }
         }
     }
-
-
 
 
 }

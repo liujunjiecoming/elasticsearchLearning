@@ -46,11 +46,11 @@ public class CreateIndexEsTest {
     }
 
     @Test
-    public void testSimple() throws IOException{
+    public void testSimple() throws IOException {
         CreateIndexRequest request = new CreateIndexRequest("twitter");
         request.settings(Settings.builder()
-                .put("index.number_of_shards", 3)
-                .put("index.number_of_replicas", 2)
+                                 .put("index.number_of_shards", 3)
+                                 .put("index.number_of_replicas", 2)
         );
 
         request.mapping(
@@ -129,41 +129,6 @@ public class CreateIndexEsTest {
         client.indices().create(request, RequestOptions.DEFAULT);
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }
