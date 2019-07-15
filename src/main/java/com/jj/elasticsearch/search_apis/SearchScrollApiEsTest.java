@@ -44,7 +44,7 @@ public class SearchScrollApiEsTest {
     }
 
     @Test
-    public void initSearchScoll() throws IOException {
+    public void initSearchScroll() throws IOException {
         SearchRequest searchRequest = new SearchRequest("posts");
         SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
         searchSourceBuilder.query(matchQuery("title", "Elasticsearch"));

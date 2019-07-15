@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0c47e9f3-79ec-4329-9762-a9e74a2c5831" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/keyword_report/KeywordReportTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/entity/A9ReportDO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/entity/DayDO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/keyword_report/KeywordReportTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/keyword_report/KeywordReportTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/search_apis/SearchApiEsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/search_apis/SearchApiEsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/search_apis/SearchScrollApiEsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/search_apis/SearchScrollApiEsTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -43,11 +45,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/keyword_report/KeywordReportTest.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/entity/A9ReportDO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="112" selection-start-line="112" selection-end-line="112" />
+            <state relative-caret-position="324">
+              <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/search_apis/SearchApiEsTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="590">
+              <caret line="171" column="30" lean-forward="true" selection-start-line="171" selection-start-column="30" selection-end-line="171" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -56,13 +70,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/documentapis/TermVectorsEsTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/documentapis/AggregationsApEsTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="42" selection-start-line="42" selection-end-line="42" />
+            <state>
+              <caret line="54" column="37" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/search_apis/SearchScrollApiEsTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="72" column="12" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -83,11 +106,17 @@
       <find>”</find>
       <find>search</find>
       <find>searchSourceBuilder</find>
-      <find>sort</find>
       <find>Builder.from</find>
+      <find>sort</find>
+      <find>cal_1</find>
+      <find>c</find>
+      <find>cal_2</find>
+      <find>agg</find>
+      <find>@ApiModelProperty('*')</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;</replace>
+      <replace>cal</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -112,16 +141,18 @@
         <option value="$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/search_apis/MutiSearchApi.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/documentapis/GetApiEsTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/documentapis/ExistsApiEsTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/search_apis/SearchApiEsTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/documentapis/AggregationsApEsTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/search_apis/MutiSearchApiEsTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/search_apis/SearchScrollApiEsTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/documentapis/TermVectorsEsTest.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/documentapis/DeleteApiEsTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/documentapis/IndexApiEsTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/documentapis/UpdateApiEsTest.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/keyword_report/KeywordReportTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/search_apis/SearchScrollApiEsTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/entity/DayDO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/entity/A9ReportDO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/search_apis/SearchApiEsTest.java" />
       </list>
     </option>
   </component>
@@ -167,9 +198,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="CatdeaLogs" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -236,18 +264,7 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="jj" type="462c0819:PsiDirectoryNode" />
               <item name="elasticsearch" type="462c0819:PsiDirectoryNode" />
-              <item name="indices_apis" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="elastic" type="b2602c69:ProjectViewProjectNode" />
-              <item name="elastic" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="jj" type="462c0819:PsiDirectoryNode" />
-              <item name="elasticsearch" type="462c0819:PsiDirectoryNode" />
-              <item name="keyword_report" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="elastic" type="b2602c69:ProjectViewProjectNode" />
@@ -264,6 +281,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="CatdeaLogs" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -272,6 +292,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -289,82 +310,82 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.KeywordReportTest.test6">
-    <configuration name="KeywordReportTest.div" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.SearchApiEsTest.test1">
+    <configuration name="SearchApiEsTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="elastic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.jj.elasticsearch.keyword_report.*" />
+          <option name="PATTERN" value="com.jj.elasticsearch.search_apis.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.jj.elasticsearch.keyword_report" />
-      <option name="MAIN_CLASS_NAME" value="com.jj.elasticsearch.keyword_report.KeywordReportTest" />
-      <option name="METHOD_NAME" value="div" />
+      <option name="PACKAGE_NAME" value="com.jj.elasticsearch.search_apis" />
+      <option name="MAIN_CLASS_NAME" value="com.jj.elasticsearch.search_apis.SearchApiEsTest" />
+      <option name="METHOD_NAME" value="test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KeywordReportTest.test3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SearchApiEsTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="elastic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.jj.elasticsearch.keyword_report.*" />
+          <option name="PATTERN" value="com.jj.elasticsearch.search_apis.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.jj.elasticsearch.keyword_report" />
-      <option name="MAIN_CLASS_NAME" value="com.jj.elasticsearch.keyword_report.KeywordReportTest" />
+      <option name="PACKAGE_NAME" value="com.jj.elasticsearch.search_apis" />
+      <option name="MAIN_CLASS_NAME" value="com.jj.elasticsearch.search_apis.SearchApiEsTest" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SearchApiEsTest.test10" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="elastic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jj.elasticsearch.search_apis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.jj.elasticsearch.search_apis" />
+      <option name="MAIN_CLASS_NAME" value="com.jj.elasticsearch.search_apis.SearchApiEsTest" />
+      <option name="METHOD_NAME" value="test10" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SearchApiEsTest.test3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="elastic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jj.elasticsearch.search_apis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.jj.elasticsearch.search_apis" />
+      <option name="MAIN_CLASS_NAME" value="com.jj.elasticsearch.search_apis.SearchApiEsTest" />
       <option name="METHOD_NAME" value="test3" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KeywordReportTest.test4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SearchApiEsTest.testYearMonth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="elastic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.jj.elasticsearch.keyword_report.*" />
+          <option name="PATTERN" value="com.jj.elasticsearch.search_apis.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.jj.elasticsearch.keyword_report" />
-      <option name="MAIN_CLASS_NAME" value="com.jj.elasticsearch.keyword_report.KeywordReportTest" />
-      <option name="METHOD_NAME" value="test4" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="KeywordReportTest.test5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="elastic" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.jj.elasticsearch.keyword_report.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.jj.elasticsearch.keyword_report" />
-      <option name="MAIN_CLASS_NAME" value="com.jj.elasticsearch.keyword_report.KeywordReportTest" />
-      <option name="METHOD_NAME" value="test5" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="KeywordReportTest.test6" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="elastic" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.jj.elasticsearch.keyword_report.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.jj.elasticsearch.keyword_report" />
-      <option name="MAIN_CLASS_NAME" value="com.jj.elasticsearch.keyword_report.KeywordReportTest" />
-      <option name="METHOD_NAME" value="test6" />
+      <option name="PACKAGE_NAME" value="com.jj.elasticsearch.search_apis" />
+      <option name="MAIN_CLASS_NAME" value="com.jj.elasticsearch.search_apis.SearchApiEsTest" />
+      <option name="METHOD_NAME" value="testYearMonth" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -372,11 +393,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.KeywordReportTest.test6" />
-        <item itemvalue="JUnit.KeywordReportTest.div" />
-        <item itemvalue="JUnit.KeywordReportTest.test5" />
-        <item itemvalue="JUnit.KeywordReportTest.test4" />
-        <item itemvalue="JUnit.KeywordReportTest.test3" />
+        <item itemvalue="JUnit.SearchApiEsTest.test1" />
+        <item itemvalue="JUnit.SearchApiEsTest.test10" />
+        <item itemvalue="JUnit.SearchApiEsTest.test" />
+        <item itemvalue="JUnit.SearchApiEsTest.test3" />
+        <item itemvalue="JUnit.SearchApiEsTest.testYearMonth" />
       </list>
     </recent_temporary>
   </component>
@@ -423,7 +444,9 @@
       <workItem from="1561942427236" duration="1008000" />
       <workItem from="1561969654354" duration="14000" />
       <workItem from="1562288376780" duration="10972000" />
-      <workItem from="1562373877474" duration="1224000" />
+      <workItem from="1562373877474" duration="1297000" />
+      <workItem from="1562901532271" duration="9603000" />
+      <workItem from="1563151762329" duration="22093000" />
     </task>
     <task id="LOCAL-00001" summary="简单的增删改查">
       <created>1561017280585</created>
@@ -439,49 +462,65 @@
       <option name="project" value="LOCAL" />
       <updated>1561359726937</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="一些简单的测试用例">
+      <created>1562378023526</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1562378023526</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="KeywordReportTest_test5 - 2019.07.05 at 15h 57m 45s.xml">
-      <configuration name="KeywordReportTest.test5" configurationId="JUnit" />
+    <history-entry file="SearchApiEsTest_test1 - 2019.07.15 at 15h 37m 56s.xml">
+      <configuration name="SearchApiEsTest.test1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="KeywordReportTest_test5 - 2019.07.05 at 16h 06m 21s.xml">
-      <configuration name="KeywordReportTest.test5" configurationId="JUnit" />
+    <history-entry file="SearchApiEsTest_test1 - 2019.07.15 at 15h 38m 12s.xml">
+      <configuration name="SearchApiEsTest.test1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="KeywordReportTest_test5 - 2019.07.05 at 16h 08m 47s.xml">
-      <configuration name="KeywordReportTest.test5" configurationId="JUnit" />
+    <history-entry file="SearchApiEsTest_test10 - 2019.07.15 at 15h 52m 27s.xml">
+      <configuration name="SearchApiEsTest.test10" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="KeywordReportTest_div - 2019.07.05 at 16h 10m 08s.xml">
-      <configuration name="KeywordReportTest.div" configurationId="JUnit" />
+    <history-entry file="SearchApiEsTest_test10 - 2019.07.15 at 15h 52m 37s.xml">
+      <configuration name="SearchApiEsTest.test10" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="KeywordReportTest_test6 - 2019.07.05 at 16h 11m 01s.xml">
-      <configuration name="KeywordReportTest.test6" configurationId="JUnit" />
+    <history-entry file="SearchApiEsTest_test10 - 2019.07.15 at 15h 52m 46s.xml">
+      <configuration name="SearchApiEsTest.test10" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="KeywordReportTest_test6 - 2019.07.05 at 16h 11m 12s.xml">
-      <configuration name="KeywordReportTest.test6" configurationId="JUnit" />
+    <history-entry file="SearchApiEsTest_test10 - 2019.07.15 at 15h 52m 52s.xml">
+      <configuration name="SearchApiEsTest.test10" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="KeywordReportTest_test6 - 2019.07.05 at 16h 11m 22s.xml">
-      <configuration name="KeywordReportTest.test6" configurationId="JUnit" />
+    <history-entry file="SearchApiEsTest_test1 - 2019.07.15 at 17h 53m 14s.xml">
+      <configuration name="SearchApiEsTest.test1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="KeywordReportTest_test6 - 2019.07.05 at 16h 11m 30s.xml">
-      <configuration name="KeywordReportTest.test6" configurationId="JUnit" />
+    <history-entry file="SearchApiEsTest_test1 - 2019.07.15 at 17h 54m 22s.xml">
+      <configuration name="SearchApiEsTest.test1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="KeywordReportTest_test6 - 2019.07.05 at 16h 11m 50s.xml">
-      <configuration name="KeywordReportTest.test6" configurationId="JUnit" />
+    <history-entry file="SearchApiEsTest_test1 - 2019.07.15 at 17h 54m 56s.xml">
+      <configuration name="SearchApiEsTest.test1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="KeywordReportTest_test6 - 2019.07.05 at 16h 11m 59s.xml">
-      <configuration name="KeywordReportTest.test6" configurationId="JUnit" />
+    <history-entry file="SearchApiEsTest_test1 - 2019.07.15 at 17h 55m 06s.xml">
+      <configuration name="SearchApiEsTest.test1" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136945000" />
+    <option name="totallyTimeSpent" value="168714000" />
+  </component>
+  <component name="TodoView" selected-index="4">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30662394" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22061966" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -490,7 +529,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.40555555" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.42444444" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -562,79 +601,14 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="简单的增删改查" />
     <MESSAGE value="格式化代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="格式化代码" />
+    <MESSAGE value="一些简单的测试用例" />
+    <option name="LAST_COMMIT_MESSAGE" value="一些简单的测试用例" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/elasticsearch/6.8.0/elasticsearch-6.8.0-sources.jar!/org/elasticsearch/common/transport/TransportAddress.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="56" column="11" selection-start-line="56" selection-start-column="11" selection-end-line="56" selection-end-column="11" />
-          <folding>
-            <element signature="e#2157#2158#0" expanded="true" />
-            <element signature="e#2215#2216#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-1.8.0-amazon-corretto/src.zip!/java/net/URLClassLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="381" column="18" selection-start-line="381" selection-start-column="18" selection-end-line="381" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/client/TestClient.java" />
-    <entry file="jar:///usr/lib/jvm/java-1.8.0-amazon-corretto/src.zip!/java/lang/ClassLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="423" column="24" selection-start-line="423" selection-start-column="24" selection-end-line="423" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/elasticsearch/6.8.0/elasticsearch-6.8.0-sources.jar!/org/elasticsearch/search/aggregations/AggregationBuilders.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="305" column="42" selection-start-line="305" selection-start-column="42" selection-end-line="305" selection-end-column="42" />
-          <folding>
-            <element signature="e#13266#13267#0" expanded="true" />
-            <element signature="e#13328#13329#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/elasticsearch/6.8.0/elasticsearch-6.8.0-sources.jar!/org/elasticsearch/search/aggregations/support/ValuesSourceAggregationBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="896">
-          <caret line="194" column="14" selection-start-line="194" selection-start-column="14" selection-end-line="194" selection-end-column="14" />
-          <folding>
-            <element signature="e#8312#8313#0" expanded="true" />
-            <element signature="e#8340#8341#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/elasticsearch/6.8.0/elasticsearch-6.8.0-sources.jar!/org/elasticsearch/action/search/SearchResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="109" column="17" lean-forward="true" selection-start-line="109" selection-start-column="17" selection-end-line="109" selection-end-column="17" />
-          <folding>
-            <element signature="e#4151#4152#0" expanded="true" />
-            <element signature="e#4205#4206#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/elasticsearch/6.8.0/elasticsearch-6.8.0-sources.jar!/org/elasticsearch/search/aggregations/AbstractAggregationBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="75" column="14" selection-start-line="75" selection-start-column="14" selection-end-line="75" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/elasticsearch-x-content/6.8.0/elasticsearch-x-content-6.8.0.jar!/org/elasticsearch/common/xcontent/ToXContent.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -728,13 +702,6 @@
     <entry file="file://$PROJECT_DIR$/log/mylog.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider" />
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/elasticsearch/6.8.0/elasticsearch-6.8.0-sources.jar!/org/elasticsearch/common/unit/Fuzziness.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="63" column="57" selection-start-line="63" selection-start-column="48" selection-end-line="63" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/elasticsearch/6.8.0/elasticsearch-6.8.0-sources.jar!/org/elasticsearch/action/search/SearchRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
@@ -780,17 +747,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/elasticsearch/6.8.0/elasticsearch-6.8.0-sources.jar!/org/elasticsearch/index/query/QueryBuilders.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="57" column="36" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
-          <folding>
-            <element signature="e#2038#2039#0" expanded="true" />
-            <element signature="e#2094#2095#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/elasticsearch/6.8.0/elasticsearch-6.8.0-sources.jar!/org/elasticsearch/action/ActionRequestBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -806,16 +762,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="558">
           <caret line="75" column="30" selection-start-line="75" selection-start-column="30" selection-end-line="75" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/documentapis/AggregationsApEsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -836,16 +782,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="44" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/documentapis/GetApiEsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -889,37 +825,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/search_apis/SearchApiEsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="31" column="46" lean-forward="true" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/search_apis/MutiSearchApiEsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="41" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-1.8.0-amazon-corretto/src.zip!/java/text/NumberFormat.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
           <caret line="289" column="24" selection-start-line="289" selection-start-column="24" selection-end-line="289" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/search_apis/SearchScrollApiEsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -930,14 +839,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="68" column="8" selection-start-line="68" selection-start-column="8" selection-end-line="72" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-1.8.0-amazon-corretto/src.zip!/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
@@ -945,20 +846,151 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/keyword_report/KeywordReportTest.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/elasticsearch/6.8.0/elasticsearch-6.8.0-sources.jar!/org/elasticsearch/common/unit/Fuzziness.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="112" selection-start-line="112" selection-end-line="112" />
+        <state relative-caret-position="288">
+          <caret line="45" column="34" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/elasticsearch/6.8.0/elasticsearch-6.8.0-sources.jar!/org/elasticsearch/index/query/MatchQueryBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="95" column="11" selection-start-line="95" selection-start-column="11" selection-end-line="95" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/search_apis/MutiSearchApiEsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/documentapis/GetApiEsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="785">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
+        </state>
+      </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/documentapis/TermVectorsEsTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="558">
           <caret line="42" selection-start-line="42" selection-end-line="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/search_apis/SearchScrollApiEsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="72" column="12" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/elasticsearch/6.8.0/elasticsearch-6.8.0-sources.jar!/org/elasticsearch/search/aggregations/bucket/histogram/DateHistogramAggregationBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="204" column="9" lean-forward="true" selection-start-line="204" selection-start-column="9" selection-end-line="204" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-amazon-corretto/src.zip!/java/text/DateFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="342" column="24" selection-start-line="342" selection-start-column="24" selection-end-line="342" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/elasticsearch/6.8.0/elasticsearch-6.8.0-sources.jar!/org/elasticsearch/search/aggregations/AggregationBuilders.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="142" lean-forward="true" selection-start-line="142" selection-end-line="142" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/elasticsearch/6.8.0/elasticsearch-6.8.0-sources.jar!/org/elasticsearch/search/aggregations/metrics/min/MinAggregationBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/documentapis/AggregationsApEsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="54" column="37" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/entity/DayDO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/keyword_report/KeywordReportTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="51" column="44" selection-start-line="51" selection-start-column="44" selection-end-line="51" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/entity/A9ReportDO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-amazon-corretto/src.zip!/java/util/Calendar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="2797" column="25" selection-start-line="2797" selection-start-column="25" selection-end-line="2797" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/elasticsearch/6.8.0/elasticsearch-6.8.0-sources.jar!/org/elasticsearch/index/query/QueryBuilders.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="302" column="35" selection-start-line="302" selection-start-column="35" selection-end-line="302" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jj/elasticsearch/search_apis/SearchApiEsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="590">
+          <caret line="171" column="30" lean-forward="true" selection-start-line="171" selection-start-column="30" selection-end-line="171" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
