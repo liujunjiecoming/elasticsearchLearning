@@ -111,6 +111,13 @@
         </dependency>
 
 
+        <dependency>
+            <groupId>org.jodd</groupId>
+            <artifactId>jodd-http</artifactId>
+            <version>5.0.12</version>
+        </dependency>
+
+
     </dependencies>
 
     <repositories>

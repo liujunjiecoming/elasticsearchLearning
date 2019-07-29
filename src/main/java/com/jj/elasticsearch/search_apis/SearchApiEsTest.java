@@ -25,9 +25,7 @@ import java.io.IOException;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -156,14 +154,22 @@ public class SearchApiEsTest {
                                                      .from(lastYear.getFirstDay())
                                                      .to(lastYear.getLastDay());
 
-        String keyword = "levi";
+        // String keyword = "levi 541 stretch jeans for men";
+        // BoolQueryBuilder queryBuilder = QueryBuilders.boolQuery()
+        //                                              .must(QueryBuilders.rangeQuery("reportTime")
+        //                                                                 .from(lastMonth.getFirstDay())
+        //                                                                 .to(lastMonth.getLastDay()));
+        // if (keyword != null) {
+        //     queryBuilder.must(QueryBuilders.wildcardQuery("keywords", "*" + keyword + "*"));
+        // }
+
+        // MatchQueryBuilder queryBuilder = new MatchQueryBuilder("keywords", "levi 541 stretch jeans for men");
+        // MatchQueryBuilder queryBuilder1 = new MatchQueryBuilder("reportTime", "2018-05-01");
         BoolQueryBuilder queryBuilder = QueryBuilders.boolQuery()
-                                                     .must(QueryBuilders.rangeQuery("reportTime")
-                                                                        .from(lastMonth.getFirstDay())
-                                                                        .to(lastMonth.getLastDay()));
-        if (keyword != null) {
-            queryBuilder.must(QueryBuilders.wildcardQuery("keywords", "*" + keyword + "*"));
-        }
+                                                     .must(QueryBuilders.termQuery("reportTime", "2018-05-01"))
+                                                     .must(QueryBuilders.termQuery("keywords", "levi 541 stretch jeans for men"));
+
+
         //构建查询
         builder1.query(queryBuilder);
 
@@ -174,7 +180,7 @@ public class SearchApiEsTest {
         SearchResponse response = client.search(request, RequestOptions.DEFAULT);
 
         NumberFormat nf = NumberFormat.getInstance();
-        nf.setMinimumFractionDigits(5);
+        nf.setMinimumFractionDigits(2);
         Stats clicks = response.getAggregations().get("clicksAgg");
         System.out.println(nf.format(clicks.getSum()));
         Stats searches = response.getAggregations().get("searchesAgg");
@@ -258,11 +264,13 @@ public class SearchApiEsTest {
     }
 
     @Test
-    public void test10() throws IOException {
+    public void test2() throws IOException {
 
         SearchSourceBuilder builder = new SearchSourceBuilder();
-        MatchQueryBuilder queryBuilder = new MatchQueryBuilder("reportTime", "2018-05-01");
+        MatchQueryBuilder queryBuilder = new MatchQueryBuilder("reportTime", "2018-07-01");
         builder.query(queryBuilder);
+        builder.from(0);
+        builder.size(100);
 
         SearchRequest request = new SearchRequest();
         request.indices("a9");
@@ -276,6 +284,27 @@ public class SearchApiEsTest {
             System.out.println(map);
         }
 
+    }
+
+    @Test
+    public void test3() {
+        List<Integer> list = new ArrayList<Integer>();
+        list.add(88);
+        list.add(4444);
+        list.add(222);
+        list.add(111);
+        list.add(333);
+        System.out.println(list);
+
+        Collections.sort(list, new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o2.intValue() - o1.intValue();
+            }
+
+        });
+
+        System.out.println(list);
     }
 
 
