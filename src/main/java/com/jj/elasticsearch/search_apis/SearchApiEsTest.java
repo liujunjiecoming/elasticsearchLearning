@@ -7,13 +7,14 @@ import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
+import org.elasticsearch.client.indices.GetIndexRequest;
 import org.elasticsearch.common.unit.Fuzziness;
 import org.elasticsearch.common.unit.TimeValue;
 import org.elasticsearch.index.query.*;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.aggregations.AggregationBuilders;
-import org.elasticsearch.search.aggregations.metrics.stats.Stats;
-import org.elasticsearch.search.aggregations.metrics.stats.StatsAggregationBuilder;
+import org.elasticsearch.search.aggregations.metrics.Stats;
+import org.elasticsearch.search.aggregations.metrics.StatsAggregationBuilder;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.elasticsearch.search.sort.FieldSortBuilder;
 import org.elasticsearch.search.sort.ScoreSortBuilder;
@@ -22,6 +23,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -39,7 +41,8 @@ public class SearchApiEsTest {
 
     private RestHighLevelClient client = null;
 
-    private String hostname = "192.168.196.140";
+    //private String hostname = "192.168.196.140";
+    private String hostname = "192.168.196.152";
     //private String hostname = "127.0.0.1";
 
     private int port = 9200;
@@ -51,7 +54,6 @@ public class SearchApiEsTest {
                 RestClient.builder(
                         new HttpHost(hostname, port, "http")
                 ));
-
 
     }
 
@@ -117,11 +119,13 @@ public class SearchApiEsTest {
     public void test1() throws IOException {
 
         WildcardQueryBuilder keywords = QueryBuilders.wildcardQuery("keywords", "*swimsuit*");
+        PrefixQueryBuilder prefixQueryBuilder = QueryBuilders.prefixQuery("keywords", "swimsuit");
 
         SearchSourceBuilder builder1 = new SearchSourceBuilder();
         builder1.from(0);
         builder1.size(100);
         builder1.sort(new FieldSortBuilder("reportTime").order(SortOrder.DESC));
+        builder1.query(prefixQueryBuilder);
 
         StatsAggregationBuilder clicksAgg = AggregationBuilders.stats("clicksAgg").field("clicks");
         StatsAggregationBuilder searchesAgg = AggregationBuilders.stats("searchesAgg").field("searches");
@@ -165,13 +169,14 @@ public class SearchApiEsTest {
 
         // MatchQueryBuilder queryBuilder = new MatchQueryBuilder("keywords", "levi 541 stretch jeans for men");
         // MatchQueryBuilder queryBuilder1 = new MatchQueryBuilder("reportTime", "2018-05-01");
-        BoolQueryBuilder queryBuilder = QueryBuilders.boolQuery()
-                                                     .must(QueryBuilders.termQuery("reportTime", "2018-05-01"))
-                                                     .must(QueryBuilders.termQuery("keywords", "levi 541 stretch jeans for men"));
-
-
-        //构建查询
-        builder1.query(queryBuilder);
+        // BoolQueryBuilder queryBuilder = QueryBuilders.boolQuery()
+        //                                              .must(QueryBuilders.termQuery("reportTime", "2018-05-01"))
+        //                                              .must(QueryBuilders.termQuery("keywords", "gym duffle bag"));
+        // //gym duffle bag　这个keyword有数据
+        //
+        //
+        // //构建查询
+        // builder1.query(queryBuilder);
 
         SearchRequest request = new SearchRequest();
         request.source(builder1);
@@ -307,5 +312,290 @@ public class SearchApiEsTest {
         System.out.println(list);
     }
 
+    @Test
+    public void test4() {
+        String date = "2018-01-01";
+        String lastMonthFirstDay = getLastMonthFirstDay(date);
+        System.out.println(lastMonthFirstDay);
+
+        String lastYearFirstDay = getLastYearFirstDay(date);
+        System.out.println(lastYearFirstDay);
+    }
+
+
+    /**
+     * 获取上一个月的第一天
+     *
+     * @param date
+     * @return
+     */
+    private static String getLastMonthFirstDay(String date) {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        //获取当前月第一天：
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(strToDate(date));
+        cal.add(Calendar.MONTH, -1);
+        cal.set(Calendar.DAY_OF_MONTH, 1);
+        String first = format.format(cal.getTime());
+        return first;
+    }
+
+    /**
+     * 获取上一年同月的第一天
+     *
+     * @param date
+     * @return
+     */
+    private static String getLastYearFirstDay(String date) {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        //获取上一年同一个月的第一天
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(strToDate(date));
+        cal.add(Calendar.MONTH, -12);
+        cal.set(Calendar.DAY_OF_MONTH, 1);
+        String firstDay = format.format(cal.getTime());
+        return firstDay;
+    }
+
+    @Test
+    public void test8() {
+        DecimalFormat df = new DecimalFormat("0.00");
+        String s = df.format((float) 71 / 187);
+        System.out.println(s);
+
+        Long a = 71L;
+        Long b = 187L;
+        System.out.println(String.format("%.2f", ((a.doubleValue() / b.doubleValue()))) + "%");
+    }
+
+    @Test
+    public void test9() {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat();
+        long time3 = System.currentTimeMillis() + 5000 * 1000;
+
+        System.out.println(System.currentTimeMillis());
+
+        Date date2 = new Date();
+        date2.setTime(time3);
+        System.out.println(simpleDateFormat.format(date2));
+    }
+
+    @Test
+    public void secondTest() {
+        //秒
+        long second = 2608467 * 600;
+
+        //转换为日时分秒
+        String days = secondToTime(second);
+        System.out.println(days);
+
+        //转换为所需日期格式
+        String dateString = secondToDate(second, "yyyy-MM-dd HH:mm:ss");
+        System.out.println(dateString);
+    }
+
+    /**
+     * 秒转换为指定格式的日期
+     *
+     * @param second
+     * @param patten
+     * @return
+     */
+    private String secondToDate(long second, String patten) {
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(second * 1000);//转换为毫秒
+        Date date = calendar.getTime();
+        SimpleDateFormat format = new SimpleDateFormat(patten);
+        String dateString = format.format(date);
+        return dateString;
+    }
+
+    private String secondToTime(long second) {
+
+        long days = second / 86400;//转换天数
+        second = second % 86400;//剩余秒数
+
+        long hours = second / 3600;//转换小时数
+        second = second % 3600;//剩余秒数
+
+        long minutes = second / 60;//转换分钟
+        second = second % 60;//剩余秒数
+
+        if (0 < days) {
+            return days + "天，" + hours + "小时，" + minutes + "分，" + second + "秒";
+        } else {
+            return hours + "小时，" + minutes + "分，" + second + "秒";
+        }
+    }
+
+    @Test
+    public void test() {
+        TimeZone.setDefault(TimeZone.getTimeZone("GMT"));
+        long currentSecond = System.currentTimeMillis();
+        Date date1 = new Date(currentSecond);
+        SimpleDateFormat format1 = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss SSS a");
+        System.out.println(format1.format(date1));
+
+        long millisecond = 2608467 * 600 * 1000L;
+        Date date = new Date(millisecond);
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String day = format.format(date);
+        System.out.println("毫秒对应日期时间字符串：" + day);
+    }
+
+    @Test
+    public void test10() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date now = new Date();
+        Date date = strTooDate("2019-08-06 08:30:00");
+        System.out.println("当前时间：" + sdf.format(now));
+        Calendar nowTime = Calendar.getInstance();
+        nowTime.add(Calendar.MINUTE, 10);
+        System.out.println(sdf.format(nowTime.getTime()));
+    }
+
+    public static Date strTooDate(String str) {
+
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date = null;
+        try {
+            date = format.parse(str);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return date;
+    }
+
+    public static String addDateMinut(String day, int x)//返回的是字符串型的时间，输入的
+    {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 24小时制
+        Date date = null;
+        try {
+            date = format.parse(day);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        if (date == null) {
+            return "";
+        }
+        System.out.println("front:" + format.format(date)); //显示输入的日期
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        cal.add(Calendar.MINUTE, 10);// 24小时制
+        date = cal.getTime();
+        System.out.println("after:" + format.format(date));  //显示更新后的日期
+        cal = null;
+        return format.format(date);
+
+    }
+
+    public static void main(String[] args) throws ParseException {
+        System.out.println(addDateMinut("2019-08-06 08:30:00", 1));
+
+    }
+
+    @Test
+    public void test11() throws ParseException {
+        SimpleDateFormat simpleFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String fromDate = simpleFormat.format(strTooDate("2019-08-06 08:30:00"));
+        String toDate = simpleFormat.format(strTooDate("2019-08-06 08:40:00"));
+        long from = simpleFormat.parse(fromDate).getTime();
+        long to = simpleFormat.parse(toDate).getTime();
+        int minutes = (int) ((to - from) / (1000 * 60));
+        System.out.println(minutes);
+    }
+
+    /**
+     * 毫秒数转时间
+     *
+     * @param batch
+     * @return
+     */
+    private String milsToDate(Long batch) {
+        //设置成格林威治时间
+        TimeZone.setDefault(TimeZone.getTimeZone("GMT"));
+        Date date = new Date(batch);
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss ");
+        return format.format(date);
+    }
+
+    @Test
+    public void test20() {
+        Long date = 2608467 * 600 * 1000L;
+        String s = milsToDate(date);
+        System.out.println(s);
+    }
+
+    @Test
+    public void test21() {
+        ArrayList<String> test = test(8);
+        for (String s : test) {
+            System.out.println(s);
+        }
+    }
+
+    /**
+     * 获取过去或者未来 任意天内的日期数组
+     *
+     * @param intervals intervals天内
+     * @return 日期数组
+     */
+    public static ArrayList<String> test(int intervals) {
+        ArrayList<String> pastDaysList = new ArrayList<>();
+        ArrayList<String> fetureDaysList = new ArrayList<>();
+        for (int i = 0; i < intervals; i++) {
+            pastDaysList.add(getPastDate(i));
+            fetureDaysList.add(getFetureDate(i));
+        }
+        return pastDaysList;
+    }
+
+    /**
+     * 获取过去第几天的日期
+     *
+     * @param past
+     * @return
+     */
+    public static String getPastDate(int past) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.DAY_OF_YEAR, calendar.get(Calendar.DAY_OF_YEAR) - past);
+        Date today = calendar.getTime();
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        String result = format.format(today);
+        return result;
+    }
+
+    /**
+     * 获取未来 第 past 天的日期
+     *
+     * @param past
+     * @return
+     */
+    public static String getFetureDate(int past) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.DAY_OF_YEAR, calendar.get(Calendar.DAY_OF_YEAR) + past);
+        Date today = calendar.getTime();
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        String result = format.format(today);
+        return result;
+    }
+
+    @Test
+    public void test12() throws IOException {
+        GetIndexRequest request = new GetIndexRequest("listing-2019-08-20");
+
+        boolean exists = client.indices().exists(request, RequestOptions.DEFAULT);
+        System.out.println(exists);
+
+    }
+
+    @Test
+    public void test13() throws ParseException {
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, -1);
+        String yesterday = new SimpleDateFormat("yyyy-MM-dd").format(cal.getTime());
+        System.out.println(yesterday);
+    }
 
 }
