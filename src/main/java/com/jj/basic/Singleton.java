@@ -1,5 +1,7 @@
 package com.jj.basic;
 
+import com.google.common.collect.Lists;
+
 /**
  * @ClassName Singleton
  * @Description 单例
